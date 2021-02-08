@@ -9,9 +9,15 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class TestController {
     @GetMapping("get1")
-    public String get(){
+    public String get1(){
         log.info("[get1]");
         return "get1---"+System.currentTimeMillis();
+    }
+
+    @GetMapping("get2")
+    public String get2(@RequestParam(value = "id",required = true,defaultValue = "100") Long id){
+        log.info("[get1][param={}]",id);
+        return "get2---"+id+"--"+System.currentTimeMillis();
     }
 
     @PostMapping("post1")
