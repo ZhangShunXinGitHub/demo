@@ -1,0 +1,4 @@
+logback:
+  log-path: /root/web-test
+server:
+  port: 8081
